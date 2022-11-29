@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>A4 landscape</title>
+
+  <!-- Normalize or reset CSS with your favorite library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+  <!-- Load paper.css for happy printing -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">
+
+  <!-- Set page size here: A5, A4 or A3 -->
+  <!-- Set also "landscape" if you need -->
+  <style>
+    @page { size: A4 landscape }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      flex-flow: column;
+      height: 100%;
+    }
+    .container-row {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+    .item {
+      padding: 10px;
+      flex: 1;
+      border: 2px;
+      border-style: solid;
+      margin: 0 -1px -1px 0;
+    }
+    .item-stretch-remaining {
+      flex-grow: 1;
+    }
+    .left-bar {
+      width: 40mm;
+    }
+    .stair-element {
+      flex: 0 0 10%;
+      display: flex;
+      flex-flow: row nowrap;
+      border: 1px;
+      border-style: solid;
+      margin-top: -1px;
+
+    }
+    .stair-element img {
+      object-fit: scale-down;
+      padding: 4px;
+    }
+    .stair-element p {
+      flex: 1 0 auto;
+    }
+  </style>
+</head>
+
+<!-- Set "A5", "A4" or "A3" for class name -->
+<!-- Set also "landscape" if you need -->
+<body class="A4 landscape">
+
+  <!-- Each sheet element should have the class "sheet" -->
+  <!-- "padding-**mm" is optional: you can set 10, 15, 20 or 25 -->
+  <section class="sheet padding-5mm">
+    <div class="container">
+     <div class="container-row">
+        <div class="item">Zone 222501</div>
+        <div class="item">Zone 222501</div>
+        <div class="item">Zone 222501</div>
+        <div class="item">Zone 222501</div>
+        <div class="item">Zone 222501</div>
+        <div class="item">Zone 222501</div>
+      </div>
+      <div class="container-row">
+        <div class="item">Zone</div>
+        <div class="item">Building</div>
+        <div class="item">Floor</div>
+        <div class="item">Room</div>
+        <div class="item">Detector Count</div>
+        <div class="item">Detector</div>
+        <div class="item">Install Location</div>
+      </div>
+      <!--style="flex: 1 1 auto;"-->
+      <div class="container-row item-stretch-remaining">
+        <div class="container left-bar">
+          <div class="item">Legend</div>
+          <div class="item">Building Plan</div>
+          <div class="item">Floor Plan
+            <div style="display: flex; flex-flow: column nowrap; flex-wrap: wrap;">
+              <div class="stair-element">
+                <p>3.EG</p>
+                <img src="stairs.svg#svgView(viewBox(0,0,32,32))" width="30" height="30"/>
+              </div>
+              <div class="stair-element">
+                <p>2.EG</p>
+                <img src="stairs.svg#svgView(viewBox(0,0,32,32))" width="30" height="30"/>
+              </div>
+              <div class="stair-element">
+                <p>1.EG</p>
+                <img src="stairs.svg#svgView(viewBox(0,0,32,32))" width="30" height="30"/>
+              </div>
+              <div class="stair-element">
+                <p>OG</p>
+                <img src="stairs.svg#svgView(viewBox(0,0,32,32))" width="30" height="30"/>
+              </div>
+              <div class="stair-element">
+                <p>UG</p>
+                <img src="stairs.svg#svgView(viewBox(0,0,32,32))" width="30" height="30"/>
+              </div>
+            </div>
+          </div>
+          <div class="item">Company Icon</div>
+          <div class="item">Page Info</div>
+        </div>
+        <div class="item">image</div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
